@@ -1,5 +1,5 @@
-# we will use openjdk 8 with alpine as it is a very small linux distro
-FROM openjdk:8
+# we will use openjdk 8 
+FROM java:8-jdk
 
 
 EXPOSE:8080
@@ -10,4 +10,4 @@ ADD target/docker-jenkins-integration.jar  docker-jenkins-integration.jar
 
 
 # set the startup command to execute the jar
-ENTRYPOINT ["java", "-jar", "/docker-jenkins-integration.jar"]
+CMD ["java", "-jar", "/docker-jenkins-integration.jar"]
